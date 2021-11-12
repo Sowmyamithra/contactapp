@@ -1,0 +1,20 @@
+<table class='table table-hover table-striped'>
+    <thead class='bg-secondary text-white fw-bold'>
+        <tr>
+            <th>SNO.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone No.</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let contact of contacts' (click)='selectContact(contact)'>
+            <td>{{contact.login.uuid.substr(contact.login.uuid.length - 4)}}</td>
+            <td>{{contact.name.first}} {{contact.name.last}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.location.city}}</td>
+        </tr>
+    </tbody>
+</table>
